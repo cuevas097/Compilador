@@ -1,0 +1,44 @@
+[
+	Real suma,res;
+	Entero i,j;
+	Cadena mensajeA, mensajeB;
+	
+	i:=0;
+	j:=1;
+	suma:=0;
+	res:=0;
+	a:= 0;
+
+	Haz[
+		suma := suma + 1;
+		Si(suma%2)[
+			res := suma * 2;
+		] Sino[
+			res := suma;
+		]
+	] Mientras(suma .MN. 10);
+
+	Si(i .IGL. 0)[ 
+	   	mensajeA:="Finaliza";
+   		mensajeB:="Inicia";
+   		suma:=2.02;
+   		res:=3.04;
+   	]
+
+   	Mientras (j .MYI. i)[
+    	a:=(suma/res)+j;
+     	res:=((res*res)+i);
+     	Si (res%2 .IGL. 0)[
+        	j:=i;
+        ] Sino[
+        	i:=i+1;
+        	j:=j+1;
+        ]
+	]
+	
+	Si (i .IGL. 0)[
+		Para (i:=0; i .IGL. a; i:=i+1)[
+			suma := res/suma;
+		]
+	]
+]
